@@ -12,6 +12,7 @@ TEST_BATCH = 128
 
 def load_params():
     X_test = os.listdir('./test-jpg')
+    #  X_test = os.listdir('./test-jpg')
     X_test = [fn.replace('.jpg', '') for fn in X_test]
     model = load_model('model_amazon6.h5', custom_objects={'fbeta': train_keras.fbeta})
     with open('tag_columns.txt', 'r') as f:
